@@ -1,0 +1,42 @@
+﻿@model appli_gest_assoc.Models.Bureau
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Bureau</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            Bureau
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.NomBureau)
+        </dd>
+        <dt class = "col-sm-2">
+            Date de création
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DateCreation)
+        </dd>
+        <dt class = "col-sm-2">
+            Activité
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Activite.Libelle)
+        </dd>
+        <dt class = "col-sm-2">
+            Association
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Association.NomAssociation)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.IdBureau">Modifier</a> |
+    <a asp-action="Index">Liste des bureaux</a>
+</div>

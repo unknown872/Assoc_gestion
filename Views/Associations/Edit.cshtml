@@ -1,0 +1,56 @@
+﻿@model appli_gest_assoc.Models.Association
+
+@{
+    ViewData["Title"] = "Modifier une association";
+}
+
+<hr />
+<div class="row">
+    <div class="col-sm-12">
+        <div class="panel panel-default">
+            <div class="panel-heading"><h3 class="panel-title">Modifier une association</h3></div>
+            <div class="panel-body">
+                <form asp-action="Edit">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <input type="hidden" asp-for="IdAssociation" />
+                    <div class="form-group">
+                        <label asp-for="NomAssociation" class="control-label">Association</label>
+                        <input asp-for="NomAssociation" class="form-control" required=""/>
+                        <span asp-validation-for="NomAssociation" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="AnneeCreation" class="control-label">Année de création</label>
+                        <input asp-for="AnneeCreation" class="form-control" required=""/>
+                        <span asp-validation-for="AnneeCreation" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Tel1" class="control-label">Télephone 1</label>
+                        <input type="tel" asp-for="Tel1" class="form-control" required=""/>
+                        <span asp-validation-for="Tel1" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Tel2" class="control-label">Télephone 2</label>
+                        <input type="tel" asp-for="Tel2" class="form-control" />
+                        <span asp-validation-for="Tel2" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Email" class="control-label">Email</label>
+                        <input asp-for="Email" type="email" class="form-control" required=""/>
+                        <span asp-validation-for="Email" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Adresse" class="control-label">Adresse</label>
+                        <input asp-for="Adresse" class="form-control" required=""/>
+                        <span asp-validation-for="Adresse" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Modifier" class="btn btn-primary" />
+                    </div>
+                </form>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

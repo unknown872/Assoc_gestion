@@ -1,0 +1,67 @@
+﻿@model appli_gest_assoc.Models.Bureau
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="container">
+
+    <!-- Page-Title -->
+    <div class="row">
+        <div class="col-sm-12">
+            <ol class="breadcrumb pull-right">
+                <li><a asp-controller="Home" asp-action="Index">Sofa</a></li>
+                <li><a asp-controller="Bureaux" asp-action="Index">Bureau</a></li>
+                <li class="active">Ajouter un bureau</li>
+            </ol>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="panel panel-default">
+                <div class="panel-heading"><h3 class="panel-title">Ajouter un bureau</h3></div>
+                <div class="panel-body">
+                    <form class="form-horizontal" role="form" method="post" asp-action="Create">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <div class="form-group">
+                            <label class="col-md-2 control-label" asp-for="NomBureau">Nom</label>
+                            <div class="col-md-10">
+                                <input type="text" class="form-control" id="nom" placeholder="Saisir le nom" asp-for="NomBureau" required="">
+                                <span asp-validation-for="NomBureau" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-2 control-label" asp-for="DateCreation">Date creation</label>
+                            <div class="col-md-10">
+                                <input type="date" class="form-control" id="nom" placeholder="Saisir le nom" asp-for="DateCreation" required="">
+                                <span asp-validation-for="DateCreation" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-2 control-label" asp-for="AssociationId"></label>
+                            <div class="col-md-10">
+
+                                <select asp-for="AssociationId" class="form-control" asp-items="ViewBag.AssociationId"></select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-2 control-label" asp-for="ActiviteId"></label>
+                            <div class="col-md-10">
+
+                                <select asp-for="ActiviteId" class="form-control" asp-items="ViewBag.ActiviteId"></select>
+                            </div>
+                        </div>
+                        <div class="container">
+                            <div class="row">
+                                <div class="col text-center">
+                                    <button type="submit" class="btn btn-primary btn-custom waves-effect waves-light m-b-5 btn-lg">Ajouter</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div> <!-- panel-body -->
+            </div> <!-- panel -->
+        </div> <!-- col -->
+    </div>
+</div> <!-- container -->

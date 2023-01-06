@@ -1,0 +1,27 @@
+﻿@model appli_gest_assoc.Models.Activite
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<div class="row">
+    <div class="col-sm-12">
+        <div class="panel panel-default">
+            <div class="panel-heading text-center"><h3 class="panel-title">Supprimer une activité</h3></div>
+            <div class="panel-body">
+                <dl class="row">
+                    <dt class="col-sm-2">
+                        Activité
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Html.DisplayFor(model => model.Libelle)
+                    </dd>
+                </dl>
+            </div>
+        </div>
+    </div>
+</div>
+<form asp-action="Delete">
+    <input type="hidden" asp-for="IdActivite" />
+    <input type="submit" value="Supprimer" class="btn btn-danger" />
+</form>

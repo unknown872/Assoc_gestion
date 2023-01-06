@@ -1,0 +1,247 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A fully featured admin theme which can be used to build CRM, CMS, etc.">
+    <meta name="author" content="Coderthemes">
+
+    <link rel="shortcut icon" href="~/images/favicon_1.ico">
+
+    <title>@ViewData["Title"]</title>
+
+    <!-- Base Css Files -->
+    <link href="~/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Font Icons -->
+    <link href="~/assets/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="~/assets/ionicon/css/ionicons.min.css" rel="stylesheet" />
+    <link href="~/css/material-design-iconic-font.min.css" rel="stylesheet">
+
+    <!-- animate css -->
+    <link href="~/css/animate.css" rel="stylesheet" />
+
+    <!-- Waves-effect -->
+    <link href="~/css/waves-effect.css" rel="stylesheet">
+
+    <!-- sweet alerts -->
+    <link href="~/assets/sweet-alert/sweet-alert.min.css" rel="stylesheet">
+
+    <!-- Custom Files -->
+    <link href="~/css/helper.css" rel="stylesheet" type="text/css" />
+    <link href="~/css/style.css" rel="stylesheet" type="text/css" />
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+
+    <script src="~/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="fixed-left">
+    <!-- Begin page -->
+    <div id="wrapper">
+        <!-- Top Bar Start -->
+        <div class="topbar">
+            <!-- LOGO -->
+            <div class="topbar-left">
+                <div class="text-center">
+                    <a asp-controller="Home" asp-action="Index" class="logo"><i class="md md-terrain"></i> <span>Sofa</span></a>
+                </div>
+            </div>
+            <!-- Button mobile view to collapse sidebar menu -->
+            <div class="navbar navbar-default" role="navigation">
+                <div class="container">
+                    <div class="">
+                        <div class="pull-left">
+                            <button class="button-menu-mobile open-left">
+                                <i class="fa fa-bars"></i>
+                            </button>
+                            <span class="clearfix"></span>
+                        </div>
+                        <form class="navbar-form pull-left" role="search">
+                            <div class="form-group">
+                                <!-- <input type="text" class="form-control search-bar" placeholder="Type here for search..."> -->
+                            </div>
+                            <button type="submit" class="btn btn-search"><i class="fa fa-search"></i></button>
+                        </form>
+                    </div>
+                    <!--/.nav-collapse -->
+                </div>
+            </div>
+        </div>
+        <!-- Top Bar End -->
+        <!-- ========== Left Sidebar Start ========== -->
+
+        <div class="left side-menu">
+            <div class="sidebar-inner slimscrollleft">
+                <div class="user-details">
+                    <div class="pull-left">
+                        <img src="~/images/users/icon-admin-128.png" alt="" class="thumb-md img-circle">
+                    </div>
+                    <div class="user-info">
+                        <div class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Admin<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a asp-controller="Home" asp-action="Login"><i class="md md-settings-power"></i> Déconnexion</a></li>
+                            </ul>
+                        </div>
+
+                        <p class="text-muted m-0">Administrateur</p>
+                    </div>
+                </div>
+                <!--- Divider -->
+                <div id="sidebar-menu">
+                    <ul>
+                        <li>
+                            <a asp-controller="Home" asp-action="Index" class="waves-effect"><i class="fa fa-home"></i><span> Accueil </span></a>
+                        </li>
+                        <li class="has_sub">
+                            <a href="#" class="waves-effect"><i class="fa fa-star-half-o"></i><span> Activités </span><span class="pull-right"><i class="md md-add"></i></span></a>
+                            <ul class="list-unstyled">
+                                <li><a asp-controller="Activites" asp-action="Create">Ajouter une activité</a></li>
+                                <li><a asp-controller="Activites" asp-action="Index">Liste des activités</a></li>
+
+                            </ul>
+                        </li>
+                        <li class="has_sub">
+                            <a href="#" class="waves-effect"><i class=" md-store"></i><span> Associations </span><span class="pull-right"><i class="md md-add"></i></span></a>
+                            <ul class="list-unstyled">
+                                <li><a asp-controller="Associations" asp-action="Create" class="">Ajouter une association</a></li>
+                                <li><a asp-controller="Associations" asp-action="Index" >Liste des associations</a></li>
+                            </ul>
+                        </li>
+                        <li class="has_sub">
+                            <a href="#" class="waves-effect"><i class="fa fa-users"></i> <span> Membres </span> <span class="pull-right"><i class="md md-add"></i></span></a>
+                            <ul class="list-unstyled">
+                                <li><a asp-controller="Membres" asp-action="Create">Ajouter un membre</a></li>
+                                <li><a asp-controller="Membres" asp-action="Index">Liste des membres</a></li>
+                            </ul>
+                        </li>
+                        <li class="has_sub">
+                            <a href="#" class="waves-effect"><i class="md-work"></i><span> Bureau </span> <span class="pull-right"><i class="md md-add"></i></span></a>
+                            <ul class="list-unstyled">
+                                <li><a asp-controller="Bureaux" asp-action="Create">Ajouter un bureau</a></li>
+                                <li><a asp-controller="Bureaux" asp-action="Index">Liste des bureaux</a></li>
+                            </ul>
+                        </li>
+                        <li class="has_sub">
+                            <a href="#" class="waves-effect"><i class="fa fa-list-ul"></i><span> Organisation</span> <span class="pull-right"><i class="md md-add"></i></span></a>
+                            <ul class="list-unstyled">
+                                <li><a asp-controller="MembreBureaux" asp-action="Create">Ajouter une organisation</a></li>
+                                <li><a asp-controller="MembreBureaux" asp-action="Index">Liste des organisations</a></li>
+                            </ul>
+                        </li>
+                        <li class="has_sub">
+                            <a href="#" class="waves-effect"><i class="fa fa-money"></i> <span> Recette </span> <span class="pull-right"><i class="md md-add"></i></span></a>
+                            <ul class="list-unstyled">
+                                <li><a asp-controller="Recettes" asp-action="Create">Ajouter une recette</a></li>
+                                <li><a asp-controller="Recettes" asp-action="Index">Liste des recettes</a></li>
+                                <li><a asp-controller="TypeRecettes" asp-action="Index">Types de recettes</a></li>
+
+                            </ul>
+                        </li>
+                        <li class="has_sub">
+                            <a href="#" class="waves-effect"><i class="fa fa-tags"></i> <span> Dépense </span> <span class="pull-right"><i class="md md-add"></i></span></a>
+                            <ul class="list-unstyled">
+                                <li><a asp-controller="Depenses" asp-action="Create">Ajouter une dépense</a></li>
+                                <li><a asp-controller="Depenses" asp-action="Index">Liste des dépenses</a></li>
+                                <li><a asp-controller="TypeDepenses" asp-action="Index">Types de dépenses</a></li>
+
+                            </ul>
+                        </li>
+                    </ul>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+        <!-- Left Sidebar End -->
+        <!-- ============================================================== -->
+        <!-- Start right Content here -->
+        <!-- ============================================================== -->
+        <div class="content-page">
+
+            <div class="content">
+                @RenderBody()
+            </div>
+            <footer class="footer text-right">
+                2022 © Sofa.
+            </footer>
+
+        </div>
+        <!-- ============================================================== -->
+        <!-- End Right content here -->
+        <!-- ============================================================== -->
+
+    </div>
+    <!-- END wrapper -->
+
+
+
+    <script>
+        var resizefunc = [];
+    </script>
+
+    <!-- jQuery  -->
+    <script src="~/js/jquery.min.js"></script>
+    <script src="~/js/bootstrap.min.js"></script>
+    <script src="~/js/waves.js"></script>
+    <script src="~/js/wow.min.js"></script>
+    <script src="~/js/jquery.nicescroll.js" type="text/javascript"></script>
+    <script src="~/js/jquery.scrollTo.min.js"></script>
+    <script src="~/assets/chat/moment-2.2.1.js"></script>
+    <script src="~/assets/jquery-sparkline/jquery.sparkline.min.js"></script>
+    <script src="~/assets/jquery-detectmobile/detect.js"></script>
+    <script src="~/assets/fastclick/fastclick.js"></script>
+    <script src="~/assets/jquery-slimscroll/jquery.slimscroll.js"></script>
+    <script src="~/assets/jquery-blockui/jquery.blockUI.js"></script>
+
+    <!-- sweet alerts -->
+    <script src="~/assets/sweet-alert/sweet-alert.min.js"></script>
+    <script src="~/assets/sweet-alert/sweet-alert.init.js"></script>
+
+    <!-- flot Chart -->
+    <script src="~/assets/flot-chart/jquery.flot.js"></script>
+    <script src="~/assets/flot-chart/jquery.flot.time.js"></script>
+    <script src="~/assets/flot-chart/jquery.flot.tooltip.min.js"></script>
+    <script src="~/assets/flot-chart/jquery.flot.resize.js"></script>
+    <script src="~/assets/flot-chart/jquery.flot.pie.js"></script>
+    <script src="~/assets/flot-chart/jquery.flot.selection.js"></script>
+    <script src="~/assets/flot-chart/jquery.flot.stack.js"></script>
+    <script src="~/assets/flot-chart/jquery.flot.crosshair.js"></script>
+
+    <!-- Counter-up -->
+    <script src="~/assets/counterup/waypoints.min.js" type="text/javascript"></script>
+    <script src="~/assets/counterup/jquery.counterup.min.js" type="text/javascript"></script>
+
+    <!-- CUSTOM JS -->
+    <script src="~/js/jquery.app.js"></script>
+
+    <!-- Dashboard -->
+    <script src="~/js/jquery.dashboard.js"></script>
+
+    <!-- Chat -->
+    <script src="~/js/jquery.chat.js"></script>
+
+    <!-- Todo -->
+    <script src="~/js/jquery.todo.js"></script>
+
+    <script type="text/javascript">
+        /* ==============================================
+        Counter Up
+        =============================================== */
+        jQuery(document).ready(function ($) {
+            $('.counter').counterUp({
+                delay: 100,
+                time: 1200
+            });
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,46 @@
+﻿@model appli_gest_assoc.Models.MembreBureau
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<div class="row">
+    <div class="col-sm-12">
+        <div class="panel panel-default">
+            <div class="panel-heading text-center"><h3 class="panel-title">Supprimer un membre de bureau</h3></div>
+            <div class="panel-body">
+    <dl class="row">
+        <dt class = "col-sm-2">
+            Date de création
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DateCreation)
+        </dd>
+        <dt class = "col-sm-2">
+            Poste
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Poste)
+        </dd>
+        <dt class = "col-sm-2">
+            Bureau
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Bureau.NomBureau)
+        </dd class>
+        <dt class = "col-sm-2">
+            Membre
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Membre.NomMembre)
+        </dd class>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="IdMembreBureau" />
+        <input type="submit" value="Supprimer" class="btn btn-danger" />
+    </form>
+</div>
+</div>
+</div>
+</div>

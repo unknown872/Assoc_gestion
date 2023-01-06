@@ -1,0 +1,47 @@
+﻿@model appli_gest_assoc.Models.Depense
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<div class="row">
+    <div class="col-sm-12">
+        <div class="panel panel-default">
+            <div class="panel-heading text-center"><h3 class="panel-title">Supprimer une depense</h3></div>
+            <div class="panel-body">
+    <dl class="row">
+        <dt class = "col-sm-2">
+            Libellé
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Libelle)
+        </dd>
+        <dt class = "col-sm-2">
+            Montant
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Montant)
+        </dd>
+        <dt class = "col-sm-2">
+            Bureau
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Bureau.NomBureau)
+        </dd class>
+        <dt class = "col-sm-2">
+            Type de dépense
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.TypeDepense.Libelle)
+        </dd class>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="IdDepense" />
+        <input type="submit" value="Supprimer" class="btn btn-danger" />
+    </form>
+</div>
+</div>
+</div>
+</div>
+

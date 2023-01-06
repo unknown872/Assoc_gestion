@@ -1,0 +1,75 @@
+﻿@model appli_gest_assoc.Models.Membre
+
+@{
+    ViewData["Title"] = "Delete";
+}
+<div class="row">
+    <div class="col-sm-12">
+        <div class="panel panel-default">
+            <div class="panel-heading text-center"><h3 class="panel-title">Supprimer un membre</h3></div>
+            <div class="panel-body">
+
+                <div class="form-group">
+                    <label class="col-md-2 control-label" for="email">Prenom</label>
+                    <div class="col-md-10">
+                        <input value="@Model.PrenomMembre" class="form-control" readonly>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-2 control-label" for="email">Nom</label>
+                    <div class="col-md-10">
+                        <input value="@Model.NomMembre" class="form-control" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2 control-label" for="email">Sexe</label>
+                        <div class="col-md-10">
+                            <input value="@Model.Sexe" class="form-control" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-2 control-label" for="email">Date naissance</label>
+                            <div class="col-md-10">
+                                <input value="@Model.DateNaiss" class="form-control" readonly>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-2 control-label" for="email">Lieu naissance</label>
+                                <div class="col-md-10">
+                                    <input value="@Model.LieuNaiss" class="form-control" readonly>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-md-2 control-label" for="email">Email</label>
+                                    <div class="col-md-10">
+                                        <input value="@Model.Email" class="form-control" readonly>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-2 control-label" for="email">Adresse</label>
+                                    <div class="col-md-10">
+                                        <input value="@Model.Adresse" class="form-control" readonly>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br />
+                <br />
+                <br />
+
+
+                <form asp-action="Delete">
+                    <input type="hidden" asp-for="IdMembre" />
+                    <input type="submit" value="Supprimer" class="btn btn-danger" /> |
+                    <a asp-action="Index">Retour à la liste</a>
+                </form>
+
+                <br />
+                <br />
+                <br />
+
+
+            </div>
+
+        </div>
+    </div>
+</div>

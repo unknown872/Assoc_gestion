@@ -1,0 +1,40 @@
+﻿@model appli_gest_assoc.Models.Depense
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<hr />
+<div class="row">
+    <div class="col-sm-12">
+        <div class="panel panel-default">
+            <div class="panel-heading"><h3 class="panel-title">Ajouter une dépense</h3></div>
+            <div class="panel-body">
+                <form asp-action="Create">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="form-group">
+                        <label asp-for="Libelle" class="control-label">Libellé</label>
+                        <input asp-for="Libelle" class="form-control" required=""/>
+                        <span asp-validation-for="Libelle" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="TypeDepenseId" class="control-label">Type de dépense</label>
+                        <select asp-for="TypeDepenseId" class="form-control" asp-items="ViewBag.TypeDepenseId"></select>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Montant" class="control-label">Montant</label>
+                        <input asp-for="Montant" class="form-control" required=""/>
+                        <span asp-validation-for="Montant" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="BureauId" class="control-label">Bureau</label>
+                        <select asp-for="BureauId" class="form-control" asp-items="ViewBag.BureauId"></select>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Ajouter" class="btn btn-primary" />
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

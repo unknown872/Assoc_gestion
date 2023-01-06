@@ -1,0 +1,40 @@
+﻿@model appli_gest_assoc.Models.MembreBureau
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<hr />
+<div class="row">
+    <div class="col-sm-12">
+        <div class="panel panel-default">
+            <div class="panel-heading"><h3 class="panel-title">Ajouter un membre de bureau</h3></div>
+            <div class="panel-body">
+                <form asp-action="Create">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="form-group">
+                        <label asp-for="MembreId" class="control-label">Matricule</label>
+                        <select asp-for="MembreId" class="form-control" asp-items="ViewBag.MembreId"></select>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="DateCreation" class="control-label">Date de création</label>
+                        <input asp-for="DateCreation" class="form-control" />
+                        <span asp-validation-for="DateCreation" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Poste" class="control-label">Poste</label>
+                        <input asp-for="Poste" class="form-control" required=""/>
+                        <span asp-validation-for="Poste" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="BureauId" class="control-label">Bureau</label>
+                        <select asp-for="BureauId" class="form-control" asp-items="ViewBag.BureauId"></select>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Ajouter" class="btn btn-primary" />
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

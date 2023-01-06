@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\appli_gest_assoc.props" />
+</Project>

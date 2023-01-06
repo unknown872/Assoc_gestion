@@ -1,0 +1,82 @@
+﻿@model appli_gest_assoc.Models.Association
+
+@{
+    ViewData["Title"] = "Ajouter une association";
+}
+
+<div class="container">
+
+    <!-- Page-Title -->
+    <div class="row">
+        <div class="col-sm-12">
+            <ol class="breadcrumb pull-right">
+                <li><a asp-controller="Home" asp-action="Index">Sofa</a></li>
+                <li><a asp-controller="Associations" asp-action="Index">Association</a></li>
+                <li class="active">Ajouter une association</li>
+            </ol>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="panel panel-default">
+                <div class="panel-heading"><h3 class="panel-title">Ajouter une association</h3></div>
+                <div class="panel-body">
+                    <form class="form-horizontal" role="form" method="post" asp-action="Create">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <div class="form-group">
+                            <label class="col-md-2 control-label" asp-for="NomAssociation">Nom</label>
+                            <div class="col-md-10">
+                                <input type="text" class="form-control" id="nom" placeholder="Saisir le nom de l'association" asp-for="NomAssociation" required="">
+                                <span asp-validation-for="NomAssociation" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-2 control-label" asp-for="AnneeCreation">Date de création</label>
+                            <div class="col-md-10">
+                                <input type="date" class="form-control" id="AnneeCreation" asp-for="AnneeCreation" required="">
+                                <span asp-validation-for="AnneeCreation" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-2 control-label" asp-for="Tel1">Téléphone 1</label>
+                            <div class="col-md-10">
+                                <input type="tel" class="form-control" id="tel1" placeholder="Saisir le numéro de téléphone 1" asp-for="Tel1" required="">
+                                <span asp-validation-for="Tel1" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-2 control-label" asp-for="Tel2">Téléphone 2</label>
+                            <div class="col-md-10">
+                                <input type="tel" class="form-control" id="tel3" placeholder="Saisir le numéro de téléphone 2" asp-for="Tel2">
+                                <span asp-validation-for="Tel2" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-2 control-label" asp-for="Email">Email</label>
+                            <div class="col-md-10">
+                                <input type="email" class="form-control" id="email" placeholder="Saisir le numéro l'email' de l'association" asp-for="Email" required="">
+                                <span asp-validation-for="Email" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-2 control-label" asp-for="Adresse">Adresse</label>
+                            <div class="col-md-10">
+                                <input type="text" class="form-control" id="adrr" placeholder="Saisir l'adresse de l'association" asp-for="Adresse" required="">
+                                <span asp-validation-for="Adresse" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="container">
+                            <div class="row">
+                                <div class="col text-center">
+                                    <button type="submit" class="btn btn-primary btn-custom waves-effect waves-light m-b-5 btn-lg">Ajouter</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div> <!-- panel-body -->
+            </div> <!-- panel -->
+        </div> <!-- col -->
+    </div>
+</div> <!-- container -->

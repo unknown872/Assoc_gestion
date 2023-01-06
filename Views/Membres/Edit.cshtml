@@ -1,0 +1,85 @@
+﻿@model appli_gest_assoc.Models.Membre
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+@{
+    ViewData["Title"] = "Ajouter un membre";
+}
+
+<div class="container">
+
+    <!-- Page-Title -->
+    <div class="row">
+        <div class="col-sm-12">
+            <h4 class="pull-left page-title">Membre</h4>
+            <ol class="breadcrumb pull-right">
+                <li><a asp-controller="Home" asp-action="Index">Sofa</a></li>
+                <li><a asp-controller="Membres" asp-action="Index">Membre</a></li>
+                <li class="active">Ajouter un membre</li>
+            </ol>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="panel panel-default">
+                <div class="panel-heading"><h3 class="panel-title">Ajouter un membre</h3></div>
+                <div class="panel-body">
+                    <form class="form-horizontal" role="form" method="post" asp-action="Edit">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <input type="hidden" asp-for="IdMembre" />
+                        <div class="form-group">
+                            <label asp-for="PrenomMembre" class="control-label">Prenom</label>
+                            <input asp-for="PrenomMembre" class="form-control" required=""/>
+                            <span asp-validation-for="PrenomMembre" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="NomMembre" class="control-label">Nom</label>
+                            <input asp-for="NomMembre" class="form-control" required=""/>
+                            <span asp-validation-for="NomMembre" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-10">
+                                <label class="control-label">Sexe</label>
+                                <select class="form-control" asp-for="Sexe">
+                                    <option>Homme</option>
+                                    <option>Femme</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="DateNaiss" class="control-label">Date de naissance</label>
+                            <input asp-for="DateNaiss" class="form-control" required=""/>
+                            <span asp-validation-for="DateNaiss" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="LieuNaiss" class="control-label">Lieu de naissance</label>
+                            <input asp-for="LieuNaiss" class="form-control" required=""/>
+                            <span asp-validation-for="LieuNaiss" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Tel" class="control-label">Télephone</label>
+                            <input asp-for="Tel" class="form-control" required=""/>
+                            <span asp-validation-for="Tel" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Email" class="control-label">Email</label>
+                            <input asp-for="Email" class="form-control" required=""/>
+                            <span asp-validation-for="Email" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Adresse" class="control-label">Adresse</label>
+                            <input asp-for="Adresse" class="form-control" required=""/>
+                            <span asp-validation-for="Adresse" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" value="Modifier" class="btn btn-primary" />
+                        </div>
+                    </form>
+                </div> <!-- panel-body -->
+            </div> <!-- panel -->
+        </div> <!-- col -->
+    </div>
+</div> <!-- containe
